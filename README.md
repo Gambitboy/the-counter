@@ -1,5 +1,9 @@
 # The Counter
-Its the counter.
+The counter is a light weight counter, that is perfect for all your counter needs.
+
+It integrates easily into any project and is always kept up-to-date.
+
+Its the counter, the only counter.
 
 ## Reporting issues
 
