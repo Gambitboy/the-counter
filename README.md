@@ -1,5 +1,10 @@
-# the-counter
+# The Counter
 Its the counter.
+
+# CHANGELOG
+Release notes can be found at [CHANGELOG.md]
+
+[CHANGELOG.md]: CHANGELOG.md
 
 # Contributions
 - We are always looking for more people to contribute to this amazing project.
