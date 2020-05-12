@@ -22,4 +22,4 @@ If you'd like to contribute to this repo, please feel free to contact me on gith
 All changes are subject to Peer Review.
 
 ## License
-- The Counter is distributed under the terms of the MIT license
+\The Counter is distributed under the terms of the MIT license
