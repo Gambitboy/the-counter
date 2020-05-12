@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>WhAT!</title>
+	<script src="confetti.min.js"></script>
+</head>
+<body>
+	<h1 id="counter" style="font-size: 500px; color: #000000">0</div>
+	<script>
+	const fonts = ["Alef"," Amiri","Arabic Transparent","Arial","Arial Black","Bahnschrift","Bauhaus 93","Bodoni 72","Bodoni 72 Oldstyle","Bodoni 72 Smallcaps","Bookshelf Symbol 7","Calibri","Calibri Light","Cambria","Cambria Math","Candara","Candara Light","Comic Sans MS","Consolas","Constantia","Corbel","Corbel Light","Courier","Courier New","David Libre","DejaVu Sans","DejaVu Serif","Ebrima","Exo 2","Franklin Gothic","Franklin Gothic Medium","Gabriola","Gadugi","Gentium Basic","Gentium Book Basic","Georgia","Goudy Bookletter 1911","Helvetica","Impact","Ink Free","ITC Bodoni 72 Bold","ITC Bodoni 72 Italic","Javanese Text","Leelawadee UI","Leelawadee UI Semilight","Liberation Mono","Liberation Sans","Liberation Serif","Libre Barcode 128","Libre Barcode 128 Text","Libre Barcode 39","Libre Barcode 39 Extended","Libre Barcode 39 Extended Text","Libre Barcode 39 Text","Lucida Console","Lucida Sans Unicode","Malgun Gothic","Malgun Gothic Semilight","Marlett","Microsoft Himalaya","Microsoft JhengHei","Microsoft JhengHei UI","Microsoft JhengHei UI Light","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Sans Serif","Microsoft Tai Le","Microsoft YaHei","Microsoft YaHei Light","Microsoft YaHei UI","Microsoft YaHei UI Light","Microsoft Yi Baiti","MingLiU-ExtB","MingLiU_HKSCS-ExtB","Miriam Libre","Modern No. 20","Mongolian Baiti","MS Gothic","MS PGothic","MS Sans Serif","MS Serif","MS UI Gothic","MV Boli","Myanmar Text","Nimbus Roman No 9 L","Nirmala UI","Nirmala UI Semilight","Noto Sans","Noto Serif","NSimSun","Palatino Linotype","PMingLiU-ExtB","Press Start 2P","Reem Kufi","Roman","Rubik","Scheherazade","Segoe MDL2 Assets","Segoe Print","Segoe Script","Segoe UI","Segoe UI Black","Segoe UI Emoji","Segoe UI Historic","Segoe UI Light","Segoe UI Semibold","Segoe UI Semilight","Segoe UI Symbol","Shree Devanagari 714","SimSun","SimSun-ExtB","Sitka Banner","Sitka Display","Sitka Heading","Sitka Small","Sitka Subheading","Sitka Text","Slabo 13px","Slabo 27px","Small Fonts","Source Code Pro","Source Sans Pro","Source Serif Pro","Sylfaen","Symbol","Tahoma","Times","Times New Roman","Trebuchet MS","Verdana","Webdings","Wingdings","Wingdings 2","Wingdings 3","Yu Gothic Light","Yu Gothic Medium","Yu Gothic UI Light","Yu Gothic UI Semibold","Yu Gothic UI Semilight"];
+	let interval = setInterval(() => {
+		
+		const div = document.getElementById("counter");
+		let number = (parseInt(div.innerHTML) + 1)%16777215;
+		let hex = number.toString(16);
+		hex = hex.padStart(6, '0');
+		div.style.color = "#"+ hex;
+		if (number%10 === 0)
+			div.style.fontFamily = fonts[number%139]
+		console.log(hex);
+		if (number === 1 && !isNaN(localStorage.getItem("counter"))) {
+			number = parseInt(localStorage.getItem("counter"));
+		}
+		div.innerHTML = number;
+		localStorage.setItem("counter", number);
+		if (number%100 === 0)
+			confetti.toggle()
+		else
+			confetti.stop()
+	}, 1000);
+	</script>
+	<!--
+	CHANGELOG
+	v0.0.1 - Made a timer that starts counting from 0 and displayed it to the screen.
+	v0.0.2 - Made the timer save its value to localStorage to be retrieved when page reloads.
+	v0.0.3 - Made the number its currently on be converted to a hex value for color.
+	v0.0.4 - Change font every 10.
+	v0.0.5 - Added a confetti library to show confetti every 100.
+	-->
+</body>
+</html>
